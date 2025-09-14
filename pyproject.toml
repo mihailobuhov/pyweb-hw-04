@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "goit-pyweb-hw-04-docker"
+name = "goit-pyweb-hw-04-udp"
 version = "0.1.0"
 description = ""
 authors = ["SvetlanaRomaniuk111 <gatskosv@gmail.com>"]

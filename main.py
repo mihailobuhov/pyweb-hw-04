@@ -8,15 +8,6 @@ from pathlib import Path
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from threading import Thread
 
-# Перевірка існування каталогу storage та файлу data.json 
-storage_dir = Path('storage') 
-storage_file = storage_dir / 'data.json' 
-
-if not storage_dir.exists(): 
-    storage_dir.mkdir(parents=True) 
-if not storage_file.exists():
-    storage_file.touch()
-
 BASE_DIR = Path()
 BUFFER_SIZE = 1024
 HTTP_PORT = 3000
@@ -43,6 +34,7 @@ class HttpHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         size = self.headers.get('Content-Length')
         data = self.rfile.read(int(size))
+        # print(data)
         socket_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         socket_client.sendto(data, (SOCKET_HOST, SOCKET_PORT))
         socket_client.close()

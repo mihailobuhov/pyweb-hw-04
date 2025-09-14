@@ -1,17 +1,17 @@
+# socket_client.py
 import socket
 
 def run_client():
     host = socket.gethostname()
     port = 5000
 
-    socket_client = socket.socket()
-    socket_client.connect((host, port))
+    socket_client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     message = input('>>> ')
 
     while message.lower().strip() != 'quit':
-        socket_client.send(message.encode())
-        msg = socket_client.recv(1024).decode()
-        print(f'Received message: {msg}')
+        socket_client.sendto(message.encode(), (host, port))
+        msg, server = socket_client.recvfrom(1024)
+        print(f"Response message from {server}: {msg.decode()}")
         message = input('>>> ')
 
     socket_client.close()

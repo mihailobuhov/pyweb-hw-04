@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/goit-pyweb-hw-04_Docker.iml" filepath="$PROJECT_DIR$/.idea/goit-pyweb-hw-04_Docker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/goit-pyweb-hw-04-udp.iml" filepath="$PROJECT_DIR$/.idea/goit-pyweb-hw-04-udp.iml" />
     </modules>
   </component>
 </project>
